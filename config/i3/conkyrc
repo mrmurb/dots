@@ -1,0 +1,29 @@
+out_to_x no
+own_window no
+out_to_console yes
+background no
+max_text_width 0
+
+# Update interval in seconds
+update_interval 2.0
+
+# RUN ENDLESSLY
+total_run_times 0
+
+# Shorten units? Yes, No, Yes, No?
+short_units no
+
+# Link is only up when having IP
+if_up_strictness address
+
+cpu_avg_samples 2
+
+# The following will be formatted on screen
+TEXT
+
+[
+    { "full_text" : "${cpu}", "color" : "\#ffffff" },
+    { "full_text" : "${hwmon temp 1}", "color" : "\#ffffff" },
+    { "full_text" : "${battery_short} ${battery_time}", "color" : "\#ffffff" },
+    { "full_text" : "${time}", "color" : "\#ffffff" }
+],
