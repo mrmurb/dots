@@ -3,6 +3,7 @@ own_window no
 out_to_console yes
 background no
 max_text_width 0
+use_xft yes
 
 # Update interval in seconds
 update_interval 2.0
@@ -22,11 +23,12 @@ cpu_avg_samples 2
 TEXT
 
 [
-    { "full_text" : "${kernel}", "color" : "\#ffffff" },
-    { "full_text" : "c: ${cpubar}", "color" : "\#ffffff" },
-    { "full_text" : "m: ${membar}", "color" : "\#ffffff" },
-    { "full_text" : "t: ${hwmon temp 1}", "color" : "\#ffffff" },
-    { "full_text" : "b: ${battery_percent}% ${battery_time}", "color" : "\#ffffff" },
-    { "full_text" : "v: ${exec amixer sget Master | egrep -o "[0-9]+%"}", "color" : "\#ffffff" },
+    { "full_text" : " ${kernel}", "color" : "\#ffffff" },
+    { "full_text" : " ${cpubar}", "color" : "\#ffffff" },
+    { "full_text" : " ${membar}", "color" : "\#ffffff" },
+    { "full_text" : " ${hwmon temp 1}°C", "color" : "\#ffffff" },
+    { "full_text" : "", "color" : "\#ffffff", "separator" : false, "separator_block_width" : 1 },         
+    { "full_text" : "${battery_percent}% ${battery_time}", "color" : "\#ffffff" },
+    { "full_text" : " ${exec amixer sget Master | egrep -o "[0-9]+%"}", "color" : "\#ffffff" },
     { "full_text" : "${time %e %b - %H:%M}", "color" : "\#ffffff" }
 ],
