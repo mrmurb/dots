@@ -22,8 +22,11 @@ cpu_avg_samples 2
 TEXT
 
 [
-    { "full_text" : "${cpu}", "color" : "\#ffffff" },
-    { "full_text" : "${hwmon temp 1}", "color" : "\#ffffff" },
-    { "full_text" : "${battery_short} ${battery_time}", "color" : "\#ffffff" },
-    { "full_text" : "${time}", "color" : "\#ffffff" }
+    { "full_text" : "${kernel}", "color" : "\#ffffff" },
+    { "full_text" : "c: ${cpubar}", "color" : "\#ffffff" },
+    { "full_text" : "m: ${membar}", "color" : "\#ffffff" },
+    { "full_text" : "t: ${hwmon temp 1}", "color" : "\#ffffff" },
+    { "full_text" : "b: ${battery_percent}% ${battery_time}", "color" : "\#ffffff" },
+    { "full_text" : "v: ${exec amixer sget Master | egrep -o "[0-9]+%"}", "color" : "\#ffffff" },
+    { "full_text" : "${time %e %b - %H:%M}", "color" : "\#ffffff" }
 ],
