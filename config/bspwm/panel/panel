@@ -1,0 +1,22 @@
+#!/bin/sh
+
+PANEL_FIFO=/tmp/panel-fifo
+if [ $(pgrep -cx panel) -gt 1 ] ; then
+	printf "%s\n" "The panel is already running." >&2
+	exit 1
+fi
+
+trap 'trap - TERM; kill 0' INT TERM QUIT EXIT
+
+[ -e "$PANEL_FIFO" ] && rm "$PANEL_FIFO"
+mkfifo "$PANEL_FIFO"
+
+bspc control --subscribe > "$PANEL_FIFO" &
+xtitle -sf 'T%s' > "$PANEL_FIFO" &
+#clock -sf 'S%a %H:%M' > "$PANEL_FIFO" &
+
+source $(dirname $0)/panel_colors
+
+cat "$PANEL_FIFO" | $(dirname $0)/panel_bar | lemonbar -g 1914x25+3+3 -f "Terminesspowerline-9" -f "Awesome-8" -F "$COLOR_FOREGROUND" -B "$COLOR_BACKGROUND" & disown
+
+wait
