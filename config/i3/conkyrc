@@ -12,7 +12,7 @@ update_interval 2.0
 total_run_times 0
 
 # Shorten units? Yes, No, Yes, No?
-short_units no
+short_units yes
 
 # Link is only up when having IP
 if_up_strictness address
@@ -24,6 +24,7 @@ TEXT
 
 [
     { "full_text" : " ${kernel}", "color" : "\#ffffff" },
+    { "full_text" : " ${fs_free /home}", "color" : "\#ffffff" },
     { "full_text" : " ${cpubar}", "color" : "\#ffffff" },
     { "full_text" : " ${membar}", "color" : "\#ffffff" },
     { "full_text" : " ${hwmon temp 1}°C", "color" : "\#ffffff" },
