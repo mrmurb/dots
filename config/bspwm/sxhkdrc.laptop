@@ -8,6 +8,10 @@
 super + shift + e
     bspc quit
 
+# restart panel
+super + shift + p
+    pkill panel; sh ~/.config/bspwm/panel/panel
+
 # close/kill window
 super +shift + q
     bspc window -c

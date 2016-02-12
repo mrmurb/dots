@@ -1,0 +1,87 @@
+# vim:filetype=sxhkdrc
+
+#########
+# bspwm #
+#########
+
+# exit bspwm
+super + shift + e
+    bspc quit
+
+# restart panel
+super + shift + p
+    pkill panel; sh ~/.config/bspwm/panel/panel
+
+# close/kill window
+super +shift + q
+    bspc window -c
+
+# next desktop
+super + t
+    bspc window -l next
+
+# balance tree (reset size)
+super + b
+    bspc desktop -B
+
+# alt tabbing to change focus
+super + Tab
+    bspc window -f last
+
+# toggle floating/fullscreen
+super + {s,f}
+    bspc window -t {floating,fullscreen}
+
+# switch/move/manual windows
+super + {ctrl,shift,alt} + {Left,Down,Up,Right}
+    bspc window -{f,s,p} {left,down,up,right}
+
+# focus or send to given desktop
+super + {_,shift + }{1-9,0}
+    bspc {desktop -f,window -d} '^{1-9,10}'
+
+# click to focus
+-button1
+    bspc pointer -g focus
+
+# move/resize window
+super + button{1,3}
+    bspc pointer -g {move,resize_corner}
+
+# send the coordinates of the pointer to the current action (don't change this)
+super + !button{1-3}
+    bspc pointer -t %i %i
+
+# terminate the current pointer action (don't change this)
+super + @button{1-3}
+    bspc pointer -u
+
+##################
+# vm independent #
+##################
+
+# brightness
+super + F5
+    xbacklight -dec 5
+super + F6
+    xbacklight -inc 5
+
+# sound
+XF86AudioLowerVolume
+    amixer -q set Master 2dB+ unmute
+XF86AudioRaiseVolume
+    amixer -q set Master 2dB- unmute
+XF86AudioMute
+    amuxer -q set Master toggle
+
+# reload sxhkd
+super + Escape
+    pkill -USR1 -x sxhkd
+
+# open terminal
+super + Return
+    urxvt
+
+# dmenu
+super + d
+    dmenu_run

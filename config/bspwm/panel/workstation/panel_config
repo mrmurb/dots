@@ -1,0 +1,7 @@
+PANEL_FIFO="/tmp/panel-fifo"
+PANEL_WIDTH="1920"
+PANEL_GEOMETRY="1920x30+0+900"
+FONT1="-*-terminus-bold-*-*-*-12-*-*-*-*-*-*-*"
+
+BACKGROUND_COLOR="#c5c5c5"
+FOREGROUND_COLOR="#ffffff"
