@@ -41,7 +41,7 @@ super + {_,shift + }{1-9,0}
     bspc {desktop -f,window -d} '^{1-9,10}'
 
 # click to focus
--button1
+~button1
     bspc pointer -g focus
 
 # move/resize window
