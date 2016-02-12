@@ -10,7 +10,7 @@ super + shift + e
 
 # restart panel
 super + shift + p
-    pkill panel; sh ~/.config/bspwm/panel/panel
+    pkill panel; sh ~/.config/bspwm/panel/workstation/panel
 
 # close/kill window
 super +shift + q

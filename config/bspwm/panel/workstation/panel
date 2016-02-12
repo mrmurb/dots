@@ -13,7 +13,7 @@ trap 'trap - TERM; kill 0' INT TERM QUIT EXIT
 mkfifo "$PANEL_FIFO"
 
 bspc control --subscribe > "$PANEL_FIFO" &
-xtitle -sf 'T%s' > "$PANEL_FIFO" &
+#xtitle -sf 'T%s' > "$PANEL_FIFO" &
 
 # clock
 while true;
@@ -37,6 +37,6 @@ done > "$PANEL_FIFO" &
 # done > "$PANEL_FIFO" &
 # battery
 
-cat "$PANEL_FIFO" | $(dirname $0)/panel_bar | lemonbar -g 1914x25+3+3 -f "Terminesspowerline-9" -f "FontAwesome-8" -F "$COLOR_FOREGROUND" -B "$COLOR_BACKGROUND" & disown
+cat "$PANEL_FIFO" | $(dirname $0)/panel_bar | lemonbar -g 2554x25+3+3 -f "Terminus-9" -f "FontAwesome-8" -F "$COLOR_FOREGROUND" -B "$COLOR_BACKGROUND" & disown
 
 wait
