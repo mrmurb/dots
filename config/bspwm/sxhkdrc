@@ -64,9 +64,9 @@ super + F6
 
 # sound
 XF86AudioLowerVolume
-    amixer -q set Master 2dB+ unmute
-XF86AudioRaiseVolume
     amixer -q set Master 2dB- unmute
+XF86AudioRaiseVolume
+    amixer -q set Master 2dB+ unmute
 XF86AudioMute
     amuxer -q set Master toggle
 
