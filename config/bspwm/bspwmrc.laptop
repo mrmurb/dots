@@ -1,7 +1,7 @@
 #!/bin/zsh
 
 # Autostart
-compton -b --config ~/.config/compton.config
+compton -b --config ~/.config/compton.conf
 nitrogen --restore
 
 # Screen Padding
@@ -19,8 +19,6 @@ bspc config gapless_monocle     true
 bspc config focus_by_distance   true
 bspc config focus_follows_pointer true
 
-#bspc monitor -d 1 2 3 4 5
-#bspc monitor -d $(echo '\uf109') $(echo '\uf121') $(echo '\uf120') $(echo '\uf07c') $(echo '\uf0ac') $(echo '\uf0c3')  $(echo '\uf141') $(echo '\uf001') 
 bspc monitor -d $(echo '\uf120') $(echo '\uf0ac') $(echo '\uf0c3') $(echo '\uf109') $(echo '\uf141')
 
 ~/.config/bspwm/panel/panel &

@@ -21,11 +21,15 @@ while read -r line ; do
 			;;
 		N*)
 			# wifi status
-			wifi="${line#?}$SEP"
+			wifi="%{A:nmcli_dmenu:}${line#?}%{A}$SEP"
 			;;
 		B*)
 			# battery percent output
 			battery="${line#?}$SEP"
+			;;
+		V*)
+			# volume
+			vol="${line#?}$SEP"
 			;;
 		D*)
 			# date
@@ -86,5 +90,5 @@ while read -r line ; do
 			;;
 	esac
 #    printf "%s\n" "%{l}${wm_infos}%{c}${title}%{B-}%{F-}%{r}"
-    printf "%s\n" "%{1}${wm_infos}%{B-}%{F-}%{r}${cpu_temp}${wifi}${battery}${date}${clock}"
+    printf "%s\n" "%{1}${wm_infos}%{B-}%{F-}%{r}${cpu_temp}${wifi}${battery}${vol}${date}${clock}"
 done

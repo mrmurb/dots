@@ -65,6 +65,14 @@ do
 	sleep 30
 done > "$PANEL_FIFO" &
 
-cat "$PANEL_FIFO" | $(dirname $0)/panel_bar | lemonbar -g 1914x25+3+3 -f "Terminesspowerline-9" -f "FontAwesome-8" -F "$COLOR_FOREGROUND" -B "$COLOR_BACKGROUND" & disown
+# sound
+while true;
+do
+	VOL=$(exec amixer sget Master | egrep -o "[0-9]+%")
+	echo "V$(printf '%b' "\uf028") $VOL"
+	sleep 2
+done > "$PANEL_FIFO" &
+
+cat "$PANEL_FIFO" | $(dirname $0)/panel_bar | lemonbar -g 1914x25+3+3 -f "Terminesspowerline-9" -f "FontAwesome-8" -F "$COLOR_FOREGROUND" -B "$COLOR_BACKGROUND" | zsh & disown
 
 wait

@@ -82,6 +82,6 @@ super + Escape
 super + Return
     urxvt
 
-# dmenu
-super + d
-    dmenu_run
+# rofi 
+super + {_,shift + } d
+    rofi -show {run,ssh}
