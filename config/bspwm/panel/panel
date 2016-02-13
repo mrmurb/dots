@@ -53,7 +53,10 @@ do
 		BATT_LEVEL=$(acpi -b | grep -o '[[:digit:]]\+%' | sed 's/%//')
 		if [[ $BATT_LEVEL -ge 30 ]]; then
 			if [[ $BATT_LEVEL -ge 80 ]]; then
-				echo "B$(printf '%b' "\uf241") $BATT_LEVEL%"
+                if [[ $BATT_LEVEL -ge 95 ]]; then
+                    echo "B$(printf '%b' "\uf240") $BATT_LEVEL%"
+                else echo "B$(printf '%b' "\uf241") $BATT_LEVEL%"
+                fi
 			else echo "B$(printf '%b' "\uf242") $BATT_LEVEL%"
 			fi
 		fi

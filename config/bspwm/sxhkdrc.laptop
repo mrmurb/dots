@@ -72,7 +72,7 @@ XF86AudioLowerVolume
 XF86AudioRaiseVolume
     amixer -q set Master 2dB+ unmute
 XF86AudioMute
-    amuxer -q set Master toggle
+    amixer -q set Master toggle
 
 # reload sxhkd
 super + Escape
@@ -85,3 +85,7 @@ super + Return
 # rofi 
 super + {_,shift + } d
     rofi -show {run,ssh}
+
+# print screen
+super + Print
+    scrot '%Y-%m-%d_scrot.png' -e 'mv $f ~/images/scrot/'

@@ -29,7 +29,7 @@ while read -r line ; do
 			;;
 		V*)
 			# volume
-			vol="${line#?}$SEP"
+			vol="%{A:amixer -q set Master toggle:}${line#?}%{A}$SEP"
 			;;
 		D*)
 			# date
