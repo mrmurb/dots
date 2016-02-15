@@ -1,6 +1,7 @@
 #!/bin/zsh
 
 # Autostart
+urxvtd &
 compton -b --config ~/.config/compton.conf
 nitrogen --restore
 

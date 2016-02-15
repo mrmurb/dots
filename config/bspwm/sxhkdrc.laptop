@@ -80,7 +80,7 @@ super + Escape
 
 # open terminal
 super + Return
-    urxvt
+    urxvtc
 
 # rofi 
 super + {_,shift + } d
