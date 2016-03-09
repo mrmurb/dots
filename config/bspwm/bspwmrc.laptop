@@ -20,6 +20,7 @@ bspc config gapless_monocle     true
 bspc config focus_by_distance   true
 bspc config focus_follows_pointer true
 
-bspc monitor -d $(echo '\uf120') $(echo '\uf0ac') $(echo '\uf0c3') $(echo '\uf109') $(echo '\uf141')
+bspc monitor eDP1 -d $(echo '\uf120') $(echo '\uf0ac') $(echo '\uf0c3') $(echo '\uf109') $(echo '\uf141')
+bspc monitor HDMI1 -d 1 2 3 4 5
 
 ~/.config/bspwm/panel/panel &
