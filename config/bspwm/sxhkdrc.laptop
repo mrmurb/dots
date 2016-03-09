@@ -1,5 +1,6 @@
 # vim:filetype=sxhkdrc
 
+
 #########
 # bspwm #
 #########
@@ -68,11 +69,15 @@ super + F6
 
 # sound
 XF86AudioLowerVolume
-    amixer -q set Master 2dB- unmute
+    sh ~/dots/scripts/pulse_control.sh dec 2
+#    amixer -q set Master 2dB- unmute
+
 XF86AudioRaiseVolume
-    amixer -q set Master 2dB+ unmute
+    sh ~/dots/scripts/pulse_control.sh inc 2
+#    amixer -q set Master 2dB+ unmute
 XF86AudioMute
-    amixer -q set Master toggle
+    sh ~/dots/scripts/pulse_control.sh mute
+#    amixer -q set Master toggle
 
 # reload sxhkd
 super + Escape
@@ -82,7 +87,7 @@ super + Escape
 super + Return
     urxvtc
 
-# rofi 
+# rofi
 super + {_,shift + } d
     rofi -show {run,ssh}
 
