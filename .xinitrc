@@ -1,6 +1,6 @@
 [ -f ~/.Xresources ] && xrdb -merge ~/.Xresources
 
-setxkbmap se &
+#blueman-applet &
 xrandr --dpi 120 &
 #nm-applet &
 #exec i3

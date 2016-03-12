@@ -71,7 +71,7 @@ done > "$PANEL_FIFO" &
 # sound
 while true;
 do
-	VOL=$(exec amixer sget Master | egrep -o "[0-9]+%")
+	VOL=$(exec pactl list sinks | grep "^[[:space:]]Volume: " | awk '{print $5}')
 	echo "V$(printf '%b' "\uf028") $VOL"
 	sleep 2
 done > "$PANEL_FIFO" &

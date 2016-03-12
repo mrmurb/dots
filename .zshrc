@@ -52,4 +52,4 @@ eval $(thefuck --alias)
 export GIT_EDITOR=vim
 
 # REMOVE THIS OR DIE CANCER WARNING
-export LD_LIBRARY_PATH="/opt/od/lib"
+#export LD_LIBRARY_PATH="/opt/od/lib"
