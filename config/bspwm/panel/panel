@@ -3,8 +3,8 @@ source $(dirname $0)/panel_colors
 
 PANEL_FIFO=/tmp/panel-fifo
 if [ $(pgrep -cx panel) -gt 1 ] ; then
-	printf "%s\n" "The panel is already running." >&2
-	exit 1
+    printf "%s\n" "The panel is already running." >&2
+    exit 1
 fi
 
 trap 'trap - TERM; kill 0' INT TERM QUIT EXIT
@@ -18,62 +18,64 @@ xtitle -sf 'T%s' > "$PANEL_FIFO" &
 # clock
 while true;
 do
-	echo "C$(printf '%b' "\uf017") $(date +'%H:%M')"
-	sleep 5
+    echo "C$(printf '%b' "\uf017") $(date +'%H:%M')"
+    sleep 5
 done > "$PANEL_FIFO" &
 
 # date
 while true;
 do
-	echo "D$(printf '%b' "\uf073") $(date +'%e %b')"
-	sleep 5
+    echo "D$(printf '%b' "\uf073") $(date +'%e %b')"
+    sleep 5
 done > "$PANEL_FIFO" &
 
 # wifi
 while true;
 do
-	NAME=$(iwconfig wlp1s0 | grep 'ESSID:' | awk '{print $4}' | sed 's/ESSID://g' | sed 's/"//g')
-	if [[ "$NAME" == "off/any" ]]; then
-		echo "N$(printf '%b' "\uf1eb") no conn"
-	else echo "N$(printf '%b' "\uf1eb") $NAME"
-	fi
-	sleep 5
+    NAME=$(iwconfig wlp1s0 | grep 'ESSID:' | awk '{print $4}' | sed 's/ESSID://g' | sed 's/"//g')
+    if [[ "$NAME" == "off/any" ]]; then
+        echo "N$(printf '%b' "\uf1eb") no conn"
+    else echo "N$(printf '%b' "\uf1eb") $NAME"
+    fi
+    sleep 5
 done > "$PANEL_FIFO" &
 
 while true;
 do
-	TEMP=$(cat '/sys/devices/platform/coretemp.0/hwmon/hwmon1/temp1_input' | sed 's/.\{3\}$//')
-	echo "P$(printf '%b' "\uf06d") $TEMP"
-	sleep 3
+    TEMP=$(cat '/sys/devices/platform/coretemp.0/hwmon/hwmon1/temp1_input' | sed 's/.\{3\}$//')
+    echo "P$(printf '%b' "\uf06d") $TEMP"
+    sleep 3
 done > "$PANEL_FIFO" &
 # battery
 while true;
 do
-	if [[ $(</sys/class/power_supply/BAT0/status) == 'Discharging' ]]; then
-		BATT_LEVEL=$(</sys/class/power_supply/BAT0/capacity)
-		if [[ $BATT_LEVEL -ge 30 ]]; then
-			if [[ $BATT_LEVEL -ge 80 ]]; then
+    if [[ $(</sys/class/power_supply/BAT0/status) == 'Discharging' ]]; then
+        BATT_LEVEL=$(</sys/class/power_supply/BAT0/capacity)
+        if [[ $BATT_LEVEL -ge 30 ]]; then
+            if [[ $BATT_LEVEL -ge 80 ]]; then
                 if [[ $BATT_LEVEL -ge 95 ]]; then
                     echo "B$(printf '%b' "\uf240") $BATT_LEVEL%"
                 else echo "B$(printf '%b' "\uf241") $BATT_LEVEL%"
                 fi
-			else echo "B$(printf '%b' "\uf242") $BATT_LEVEL%"
-			fi
-		fi
-		if [[ $BATT_LEVEL -lt 30 ]]; then
-			echo "B$(printf '%b' "\uf243") $BATT_LEVEL%"
-		fi
-	else echo "B$(printf '%b' "\uf1e6") CHRG"
-	fi
-	sleep 30
+            else echo "B$(printf '%b' "\uf242") $BATT_LEVEL%"
+            fi
+        fi
+        if [[ $BATT_LEVEL -lt 30 ]]; then
+            echo "B$(printf '%b' "\uf243") $BATT_LEVEL%"
+        fi
+    else
+        BATT_LEVEL=$(</sys/class/power_supply/BAT0/capacity)
+        echo "B$(printf '%b' "\uf1e6") +$BATT_LEVEL%"
+    fi
+    sleep 30
 done > "$PANEL_FIFO" &
 
 # sound
 while true;
 do
-	VOL=$(exec pactl list sinks | grep "^[[:space:]]Volume: " | awk '{print $5}')
-	echo "V$(printf '%b' "\uf028") $VOL"
-	sleep 2
+    VOL=$(exec pactl list sinks | grep "^[[:space:]]Volume: " | awk '{print $5}')
+    echo "V$(printf '%b' "\uf028") $VOL"
+    sleep 2
 done > "$PANEL_FIFO" &
 
 cat "$PANEL_FIFO" | $(dirname $0)/panel_bar | lemonbar -g 1914x25+3+3 -f "Terminesspowerline-9" -f "FontAwesome-8" -F "$COLOR_FOREGROUND" -B "$COLOR_BACKGROUND" | zsh & disown
