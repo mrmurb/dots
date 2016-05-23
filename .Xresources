@@ -1,7 +1,7 @@
 Xft.dpi: 120
 
-URxvt*font:                     xft:Source Code Pro:regular:size=8
-URxvt*scrollBar:                false
+URxvt.font:                     xft:Source Code Pro:regular:size=8
+URxvt.scrollBar:                false
 URxvt.perl-ext-common:          default,clipboard,url-select
 URxvt.url-select.launcher:      /usr/bin/google-chrome-stable
 URxvt.matcher.button:           1

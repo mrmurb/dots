@@ -24,7 +24,7 @@ ZSH_THEME="eastwood"
 plugins=(git)
 
 # User configuration
-export PATH="/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/opt/od/bin"
+export PATH="/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
@@ -50,6 +50,7 @@ eval $(thefuck --alias)
 
 # Exports
 export GIT_EDITOR=vim
+export VISUAL=vim
 
-# REMOVE THIS OR DIE CANCER WARNING
-#export LD_LIBRARY_PATH="/opt/od/lib"
+# Aliases
+alias mirkk='ssh -p22334 max@leif.ig4.se'
