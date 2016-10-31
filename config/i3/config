@@ -10,6 +10,7 @@ gaps inner 5
 #gaps outer 5
 
 #for_window [class="Wine"] floating enable 
+for_window [class="Pavucontrol"] floating enable
 for_window [window_role="pop-up"] floating enable
 no_focus [window_role="pop-up"]
 
@@ -26,9 +27,9 @@ font pango:monospace 8
 floating_modifier $mod
 
 # KEYBINDINGS
-bindsym XF86AudioMute exec amixer -q set Master toggle
-bindsym XF86AudioRaiseVolume exec amixer -q set Master 2db+ unmute
-bindsym XF86AudioLowerVolume exec amixer -q set Master 2dB- unmute
+bindsym XF86AudioMute exec ~/dots/scripts/pulse_control.sh mute
+bindsym XF86AudioRaiseVolume exec ~/dots/scripts/pulse_control.sh inc 2
+bindsym XF86AudioLowerVolume exec ~/dots/scripts/pulse_control.sh dec 2
 bindsym $mod+F5 exec xbacklight -dec 5
 bindsym $mod+F6 exec xbacklight -inc 5
 
