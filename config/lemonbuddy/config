@@ -39,7 +39,7 @@ interface=wlp1s0
 interval=3.0
 
 label-connected= %{A:nmcli_dmenu:}%essid% | %{F#aaa}%local_ip%%{F- A-}
-label-disconnected= N/A
+label-disconnected= %{A:nmcli_dmenu:}N/A%{A-}
 
 [module/battery]
 type=internal/battery
