@@ -1,7 +1,7 @@
 #!/bin/zsh
 
 # Autostart
-#urxvtd
+urxvtd &
 sxhkd -c ~/.config/bspwm/sxhkdrc &
 compton -b --config ~/.config/compton.conf
 nitrogen --restore
@@ -28,3 +28,5 @@ bspc rule -a Pavucontrol state=floating
 bspc rule -a Steam state=floating
 
 bspc monitor eDP1 -d $(echo '\uf120') $(echo '\uf0ac') $(echo '\uf0c3') $(echo '\uf109') $(echo '\uf141')
+
+polybar bspwm &

@@ -1,6 +1,5 @@
 # vim:filetype=sxhkdrc
 
-
 #########
 # bspwm #
 #########
@@ -11,7 +10,7 @@ super + shift + e
 
 # restart panel
 super + shift + p
-    pkill panel; sh ~/.config/bspwm/panel/panel
+    ~/.config/polybar/launch.sh bspwm &
 
 # close/kill window
 super +shift + q
