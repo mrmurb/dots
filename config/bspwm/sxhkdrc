@@ -10,7 +10,7 @@ super + shift + e
 
 # restart panel
 super + shift + p
-    ~/.config/polybar/launch.sh bspwm &
+    ~/.config/polybar/launch.sh top
 
 # close/kill window
 super +shift + q
