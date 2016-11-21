@@ -3,8 +3,8 @@
 # Autostart
 urxvtd &
 sxhkd -c ~/.config/bspwm/sxhkdrc &
-compton -b --config ~/.config/compton.conf
-nitrogen --restore
+#compton -b --config ~/.config/compton.conf
+#nitrogen --restore
 
 # Screen Padding
 bspc config top_padding         26
