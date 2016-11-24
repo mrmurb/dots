@@ -45,6 +45,7 @@ set nocompatible
     """ Visual {{{
         syntax on
         set number
+        set noshowmode
         set linebreak
         set showbreak=+++
         set showmatch
