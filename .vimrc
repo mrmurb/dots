@@ -103,11 +103,10 @@ set nocompatible
     map <F1> :TagbarToggle<CR>
 
     " Window navigation
-    noremap <silent> <A-Up> :wincmd k<CR>
-    noremap <silent> <A-Down> :wincmd j<CR>
-    noremap <silent> <A-Right> :wincmd l<CR>
-    noremap <silent> <A-Left> :wincmd h<CR>
-
+    map <silent> Oa :wincmd k<CR>
+    map <silent> Ob :wincmd j<CR>
+    map <silent> Od :wincmd h<CR>
+    map <silent> Oc :wincmd l<CR>
     """ Toggle realtive numbers {{{
         function! NumberToggle()
             if(&relativenumber == 1)
