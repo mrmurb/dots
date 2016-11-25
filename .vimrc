@@ -28,6 +28,8 @@ set nocompatible
         Plugin 'morhetz/gruvbox'
         Plugin 'majutsushi/tagbar'
         Plugin 'itchyny/lightline.vim'
+        Plugin 'baskerville/vim-sxhkdrc'
+        Plugin 'PotatoesMaster/i3-vim-syntax'
     """ }}}
     """ Finish Vundle {{{
         call vundle#end()
