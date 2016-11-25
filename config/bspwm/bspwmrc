@@ -1,12 +1,11 @@
 #!/bin/zsh
 
 # Autostart
+sh ~/.fehbg
 urxvtd &
 sxhkd -c ~/.config/bspwm/sxhkdrc &
 setxkbmap se
-
-#compton -b --config ~/.config/compton.conf
-#nitrogen --restore
+compton -b --config ~/.config/compton.conf
 
 # Screen Padding
 bspc config top_padding         26
