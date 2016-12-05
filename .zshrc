@@ -56,5 +56,5 @@ export VISUAL=vim
 alias mirkk='ssh -p22334 max@leif.ig4.se'
 
 # GoLang Setup
-export GOPATH=~/go
-export PATH=$PATH:~/go/bin
+export GOPATH=~/code/go
+export PATH=$PATH:~/code/go/bin
