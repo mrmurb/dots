@@ -19,5 +19,5 @@ rofi.opacity:   80
 rofi.terminal:  urxvtc
 
 ! Set color scheme
-#include "dots/colorschemes/nordisk"
+#include "dots/colorschemes/gruvbox"
 
