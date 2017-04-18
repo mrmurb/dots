@@ -4,7 +4,7 @@
 [bar/top]
 top = true
 dock = true
-backround = #00
+backround = #000
 foreground = #4A5466
 
 height = 25
@@ -12,8 +12,8 @@ spacing = 1
 lineheight = 3
 padding-right = 1
 
-font-0 = SourceCodePro:size=8;0
-font-1 = FontAwesome:size=8;-2
+font-0 = SourceCodePro:size=10;0
+font-1 = FontAwesome:size=10;-2
 
 modules-left = bspwm
 modules-center = title

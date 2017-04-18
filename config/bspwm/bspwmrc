@@ -29,6 +29,7 @@ bspc config remove_disabled_monitors true
 # Window config
 bspc rule -a Pavucontrol state=floating
 bspc rule -a Steam state=floating
+bspc rule -a Skype state=floating
 
 bspc monitor eDP1 -d 'term' 'web' 'code' 'desktop' 'etc'
 

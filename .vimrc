@@ -134,6 +134,9 @@ set nocompatible
 """ Neocomplete {{{
     let g:neocomplete#enable_at_startup = 1
     let g:neocomplete#enable_smart_case = 1
-    
+    let g:neocomplete#enable_auto_close_preview = 1
+
+    autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+
     inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 """ }}}
