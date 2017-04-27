@@ -1,45 +1,29 @@
 ; vim:ft=dosini
-[settings]
-
 [bar/top]
+monitor = eDP-1
 top = true
-dock = true
-backround = #000
+override-redirect = true
+background = #fff
 foreground = #4A5466
 
 height = 25
 spacing = 1
-lineheight = 3
+line-size = 3
 padding-right = 1
 
-font-0 = SourceCodePro:size=10;0
-font-1 = FontAwesome:size=10;-2
+font-0 = SourceCodePro:size=10;2
+font-1 = FontAwesome:size=10;2
 
+module-margin = 1
 modules-left = bspwm
 modules-center = title
-modules-right = pacman wireless volume battery time
-
-wm-restack = bspwm
-
-[bar/bottom]
-bottom = true
-dock = true
-backround = ${bar/top.backround}
-foreground = ${bar/top.foreground}
-
-spacing = 1
-lineheight = 3
-padding-right = 1
-
-font-0 = SourceCodePro:size=8;0
-font-1 = FontAwesome:size=8;-2
-
-modules-right = cpu_usage mem_usage cpu_temp
+modules-right = wireless volume battery time 
 
 wm-restack = bspwm
 
 [module/bspwm]
 type = internal/bspwm
+
 format = <label-state> <label-mode>
 
 ws-icon-0 = term;
@@ -48,17 +32,17 @@ ws-icon-2 = code;
 ws-icon-3 = desktop;
 ws-icon-4 = etc;
 
-label-active = %icon% %name%
-label-active-foreground = #4A5466
-label-active-underline = #5E6B81
-label-active-padding = 1
+label-focused = %icon% %name%
+label-focused-foreground = #4A5466
+label-focused-underline = #5E6B81
+label-focused-padding = 1
 
 label-occupied = %icon% %name%
 label-occupied-foreground = #4A5466
 label-occupied-padding = 1
 
 label-urgent = %icon% %name%
-label-urgent-backround = #F6F9FF
+label-urgent-background = #F6F9FF
 label-urgent-padding = 1
 
 label-empty = %icon%
@@ -68,24 +52,21 @@ label-empty-padding = 1
 [module/time]
 type = internal/date
 
-inteval = 60
-date =  %H:%M
-
-[module/volume]
-type = internal/volume
-label-volume =  %percentage%
-label-muted =  muted
+interval = 60
+format = <label>
+label =  %time%
+time = %H:%M
 
 [module/battery]
 type = internal/battery
 battery = BAT0
 adapter = AC0
 full-at = 98
-poll-internal = 5
+poll-interval = 5
 
-format-charging = <animation-charging> <label-charging>
-format-discharging = <ramp-capacity> <label-discharging>
-format-full = <ramp-capacity> <label-full>
+format-charging = <animation-charging><label-charging>
+format-discharging = <ramp-capacity><label-discharging>
+format-full = <ramp-capacity><label-full>
 
 ramp-capacity-0 = 
 ramp-capacity-1 = 
@@ -100,23 +81,19 @@ animation-charging-3 = 
 animation-charging-4 = 
 animation-charging-framerate=750
 
+[module/volume]
+type = internal/volume
+label-volume =  %percentage%
+label-muted =  muted
+
 [module/wireless]
 type = internal/network
+
 interface = wlp1s0
 interval = 3.0
 
 label-connected =  %{A:nmcli_dmenu:}%essid%%{A-}
 label-disconnected= %{A:nmcli_dmenu:}N/A%{A-}
-
-[module/pacman]
-type = custom/script
-exec = python3 ~/dots/scripts/pacup.py
-interval = 1800
-
-[module/cpu_temp]
-type = internal/temperature
-interval = 3
-thermal-zone = 0
 
 [module/title]
 type = internal/xwindow
