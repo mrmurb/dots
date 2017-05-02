@@ -61,10 +61,10 @@ super + @button{1-3}
 ##################
 
 # brightness
-super + F5
-    xbacklight -dec 5
-super + F6
-    xbacklight -inc 5
+XF86MonBrightnessDown
+    brightness -d 50
+XF86MonBrightnessUp
+    brightness -i 50
 
 # sound
 XF86AudioLowerVolume
