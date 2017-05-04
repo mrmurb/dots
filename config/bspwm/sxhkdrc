@@ -88,7 +88,7 @@ super + Return
 
 # rofi
 super + {_,shift + } d
-    rofi -show {run,ssh}
+    rofi -show {run,ssh} -hide-scrollbar
 
 # print screen
 super + Print

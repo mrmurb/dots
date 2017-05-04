@@ -5,9 +5,9 @@
 urxvtd &
 thunar --daemon &
 sxhkd -c ~/.config/bspwm/sxhkdrc &
-#nm-applet 2>&1 > /dev/null &    # Cant get NetworkManager to store passwords without applet running..
+nm-applet 2>&1 > /dev/null &    # Cant get NetworkManager to store passwords without applet running..
 setxkbmap se
-#compton -b --config ~/.config/compton.conf
+compton -b --config ~/.config/compton.conf
 
 # Screen Padding
 bspc config top_padding         26

@@ -13,7 +13,7 @@ URxvt.iso14755:                 false
 URxvt.iso14755_52:              false
 
 ! rofi
-rofi.font:      terminus 10
+rofi.font:      Source Code Pro 10
 rofi.lines:     10
 rofi.opacity:   80
 rofi.terminal:  urxvtc
