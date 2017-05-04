@@ -14,10 +14,10 @@ padding-right = 1
 font-0 = SourceCodePro:size=10;2
 font-1 = FontAwesome:size=10;2
 
-module-margin = 1
+module-margin-right = 1
 modules-left = bspwm
 modules-center = title
-modules-right = wireless volume battery time 
+modules-right = pacman wireless volume battery time
 
 wm-restack = bspwm
 
@@ -83,8 +83,12 @@ animation-charging-framerate=750
 
 [module/volume]
 type = internal/volume
-label-volume =  %percentage%
+label-volume =  %percentage%%
 label-muted =  muted
+
+speaker-mixer = Speaker
+headphone-mixer = Headphone
+headphone-id = 13
 
 [module/wireless]
 type = internal/network
@@ -97,3 +101,8 @@ label-disconnected= %{A:nmcli_dmenu:}N/A%{A-}
 
 [module/title]
 type = internal/xwindow
+
+[module/pacman]
+type = custom/script
+exec = python ~/dots/scripts/pacup.py
+interval = 1800
