@@ -1,0 +1,44 @@
+# If you come from bash you might have to change your $PATH.
+# export PATH=$HOME/bin:/usr/local/bin:$PATH
+
+export GOPATH=$HOME/Dev/go
+export ANDROID_HOME=$HOME/Library/Android/sdk
+export PATH=$ANDROID_HOME/platform-tools:$ANDROID_HOME/tools/bin:$HOME/Dev/go/bin:$HOME/.fastlane/bin:$HOME/Dev/flutter-sdk/bin:$PATH
+
+
+# Load NVM
+export NVM_DIR="$HOME/.nvm"
+[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
+
+export ZSH="/Users/max/.oh-my-zsh"
+ZSH_THEME="eastwood"
+# DISABLE_AUTO_UPDATE="true"
+# DISABLE_LS_COLORS="true"
+# DISABLE_AUTO_TITLE="true"
+# ENABLE_CORRECTION="true"
+HIST_STAMPS="dd/mm/yyyy"
+
+plugins=(
+  git
+)
+
+source $ZSH/oh-my-zsh.sh
+
+# User configuration
+export LANG='en_US.UTF-8'
+export GOPATH=$HOME/Dev/go
+export ANDROID_HOME=$HOME/Library/Android/sdk
+export PATH=$ANDROID_HOME/platform-tools:$ANDROID_HOME/tools/bin:$HOME/Dev/go/bin:$HOME/.fastlane/bin:$HOME/Dev/flutter-sdk/bin:$HOME/.jenv/bin:$PATH
+
+export DRONE_SERVER=https://drone.ig4.se
+export DRONE_TOKEN=GtL6VgNtbo01LQvUrJTyMeGdXWz5KgBF
+
+source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc'
+source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc'
+
+# Load NVM
+export NVM_DIR="$HOME/.nvm"
+[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
+
+eval "$(jenv init -)"
+
