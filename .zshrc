@@ -1,5 +1,7 @@
 source /usr/share/zsh/scripts/zplug/init.zsh
 
+export SPACESHIP_DIR_PREFIX=""
+export SPACESHIP_VI_MODE_SHOW=false
 export EDITOR=vim
 export N_PREFIX=$HOME/.n
 export HISTFILE=$HOME/.zsh_history
