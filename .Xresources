@@ -1,4 +1,4 @@
-Xft.dpi: 96
+Xft.dpi: 120
 
 URxvt.font:                     xft:Source Code Pro:regular:size=10
 URxvt.scrollBar:                false

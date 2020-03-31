@@ -46,9 +46,13 @@ super + {_,shift + }{1-9,0}
 
 # brightness
 XF86MonBrightnessDown
-    brightness -d 50
+    light -U 5
 XF86MonBrightnessUp
-    brightness -i 50
+    light -A 5
+XF86KbdBrightnessDown
+    light -s sysfs/leds/smc::kbd_backlight -U 5
+XF86KbdBrightnessUp
+    light -s sysfs/leds/smc::kbd_backlight -A 5
 
 # sound
 XF86AudioLowerVolume

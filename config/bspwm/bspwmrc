@@ -3,7 +3,7 @@
 # Autostart
 #sh ~/.fehbg
 urxvtd &
-thunar --daemon &
+#thunar --daemon &
 sxhkd -c ~/.config/bspwm/sxhkdrc &
 #nm-applet 2>&1 > /dev/null &    # Cant get NetworkManager to store passwords without applet running..
 setxkbmap se
