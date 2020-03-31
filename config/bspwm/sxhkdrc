@@ -46,13 +46,13 @@ super + {_,shift + }{1-9,0}
 
 # brightness
 XF86MonBrightnessDown
-    light -U 5
+    macbook-lighter-screen -d 10
 XF86MonBrightnessUp
-    light -A 5
+    macbook-lighter-screen -i 10
 XF86KbdBrightnessDown
-    light -s sysfs/leds/smc::kbd_backlight -U 5
+    macbook-lighter-kbd -d 10 
 XF86KbdBrightnessUp
-    light -s sysfs/leds/smc::kbd_backlight -A 5
+    macbook-lighter-kbd -i 10
 
 # sound
 XF86AudioLowerVolume
