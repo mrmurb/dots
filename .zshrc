@@ -1,5 +1,6 @@
 source /usr/share/zsh/scripts/zplug/init.zsh
 
+export EDITOR=vim
 export N_PREFIX=$HOME/.n
 export HISTFILE=$HOME/.zsh_history
 export HISTSIZE=10000
